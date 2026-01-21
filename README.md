@@ -57,6 +57,16 @@ All infrastructure is defined using Terraform to ensure:
 
 ---
 
+## Design Considerations
+
+- Asynchronous architecture using SQS to handle traffic spikes safely
+- Serverless processing with AWS Lambda for scalability and low operational overhead
+- Least-privilege IAM roles for improved security
+- Infrastructure defined using Terraform for reproducibility and version control
+- Designed with AWS Free Tier constraints in mind
+
+---
+
 ## Future Enhancements
 - Phase 2: Lambda-based log processing
 - Phase 3: EC2-based monitoring node with Prometheus and Grafana
