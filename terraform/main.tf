@@ -59,3 +59,9 @@ resource "aws_iam_role_policy_attachment" "lambda_policy_attach" {
   role       = aws_iam_role.lambda_role.name
   policy_arn = aws_iam_policy.lambda_policy.arn
 }
+resource "aws_lambda_event_source_mapping" "sqs_trigger" {
+  event_source_arn = aws_sqs_queue.log_queue.arn
+  function_name    = aws_lambda_function.log_processor.arn
+  batch_size       = 5
+  enabled          = true
+}
