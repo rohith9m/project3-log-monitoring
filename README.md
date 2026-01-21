@@ -52,8 +52,6 @@ All infrastructure is defined using Terraform to ensure:
 
 ## Cost & Design Considerations
 - Designed to operate within AWS Free Tier limits
-- Asynchronous architecture to handle traffic spikes safely
-- Modular design to allow future scaling with Lambda, EC2, and monitoring tools
 
 ---
 
