@@ -19,6 +19,21 @@ Phase 1 provisions the foundational messaging and storage components required fo
 
 ---
 
+## Serverless Log Processing (Phase 2)
+
+A serverless AWS Lambda function is used to process log messages asynchronously.  
+Amazon SQS acts as a buffer between log producers and the Lambda function to handle spikes and decouple components.
+
+### Flow
+1. Log messages are pushed to Amazon SQS.
+2. SQS triggers the Lambda function automatically using event source mapping.
+3. The Lambda function analyzes log messages for error patterns.
+4. Critical events trigger notifications via Amazon SNS.
+5. Logs can be archived in Amazon S3 for audit and analysis.
+
+
+---
+
 ## Log Processing Flow (High-Level)
 1. Application logs are collected and prepared for centralized ingestion.
 2. Logs are queued using Amazon SQS to decouple producers from consumers.
