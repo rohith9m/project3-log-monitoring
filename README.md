@@ -49,5 +49,4 @@ All infrastructure is defined using Terraform to ensure:
 
 ---
 
-## Author
-Rohith – DevOps & Cloud Engineering
+
